@@ -1,33 +1,11 @@
 import express from 'express';
 import cors from 'cors';
-import { pingDatabase, testServerResponse } from "./controllers/tests.controllers.js";
-import { signUpUser, signInUser } from './controllers/auth.controllers.js';
-import { getTransactionsDetails, getUserDetails } from './controllers/user.controllers.js';
-import { executeUserTransaction } from './controllers/transactions.controllers.js';
-
+import router from "./routes/index.routers.js"
 
 const server = express();
 server.use(cors());
 server.use(express.json());
-
-//Usar Routers
-
-
-server.post('/test', pingDatabase);
-server.get('/test', testServerResponse);
-
-
-
-server.post('/sign-in', signInUser);
-server.post('/sign-up', signUpUser);
-
-
-
-server.get('/account-details', getUserDetails);
-server.post('/transaction', executeUserTransaction);
-server.get('/transaction', getTransactionsDetails);
-
-
+server.use(router);
 
 
 

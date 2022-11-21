@@ -19,6 +19,7 @@ export async function getUserDetails (req, res) {
 
 
 export async function getTransactionsDetails (req, res) {
+    
     const token = req.headers.authentication?.replace('Bearer ', '');
     try {
         const { email } = await sessionsCol.findOne({token});
@@ -27,5 +28,6 @@ export async function getTransactionsDetails (req, res) {
         res.status(200).send(query);
     } catch (err) {
         if (err === 'Session Expired') res.status(408).send('Request Timeout');
+        else {res.status(400).send(err)};
     }
 }
