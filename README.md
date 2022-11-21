@@ -11,7 +11,8 @@ yarn install
 ```
 
 Then, edit .env.example in the "root" directory to .env and fill in your *mongo* database URI, and the port your server will be running on. Default is set to 5000.
-    *This project was done in association with this front-end: https://github.com/yuridesideri/projeto14_My_Wallet_App*
+
+*This project was done in association with this front-end: https://github.com/yuridesideri/projeto14_My_Wallet_App*
 
 
 Finally, run your development server:
