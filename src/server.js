@@ -5,7 +5,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const server = express();
-server.use(cors({ origin: "https://mywalletapp-production.up.railway.app/" }));
+server.use(cors({ origin: true, credentials: true }));
 server.use(express.json());
 server.get("/health", (req, res) => {
 	res.send("OK");
