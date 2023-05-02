@@ -7,10 +7,10 @@ dotenv.config();
 const server = express();
 server.use(cors({ origin: "https://mywalletapp-production.up.railway.app/" }));
 server.use(express.json());
-server.use(router);
 server.get("/health", (req, res) => {
 	res.send("OK");
 });
+server.use(router);
 
 const port = process.env.SERVER_PORT || 5000;
 server.listen(port, () => console.log(`Starting in port ${port}`));
